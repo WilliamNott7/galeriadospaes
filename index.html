@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Galeria dos Pães — Pastelaria, Brunch, Pratos e Pizzas a Lenha | Luanda</title>
+<meta name="description" content="Pastelaria, pequeno-almoço e brunch, pratos variados e pizzas em forno a lenha em Luanda. Encomende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f1e6;--bg2:#efe5d2;--ink:#2e1c11;--mute:#6d5846;--brand:#4b5a34;--brand-ink:#fff;--gold:#d9a93a;--line:#decfb4;--card:#fffaf0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d130c;--bg2:#27190f;--ink:#f4e9d6;--mute:#bda78b;--brand:#9bb06b;--brand-ink:#1d130c;--gold:#e6b84a;--line:#3d2a1b;--card:#2a1b11}}
+:root[data-theme="dark"]{--bg:#1d130c;--bg2:#27190f;--ink:#f4e9d6;--mute:#bda78b;--brand:#9bb06b;--brand-ink:#1d130c;--gold:#e6b84a;--line:#3d2a1b;--card:#2a1b11}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--ink);font:17px/1.6 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;font-weight:700}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(30px,5vw,44px);margin-bottom:14px}
+.lead{color:var(--mute);max-width:56ch;margin-bottom:32px}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;background:var(--brand);color:var(--brand-ink);font-weight:700;text-decoration:none;border:2px solid var(--brand);cursor:pointer;font:inherit;font-weight:700}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Fraunces,serif;font-weight:700;font-size:21px;text-decoration:none}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-size:15px;font-weight:500}
+nav .btn{padding:8px 16px;font-size:14px}
+@media(max-width:760px){nav a:not(.btn){display:none}}
+.hero{padding:calc(130px + env(safe-area-inset-top,0px)) 0 80px;background:var(--bg2);position:relative;overflow:hidden}
+.hero h1{font-size:clamp(42px,8vw,84px);max-width:13ch;margin-bottom:22px}
+.hero p{max-width:46ch;color:var(--mute);font-size:19px;margin-bottom:28px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.loaf{position:absolute;right:-60px;bottom:-40px;width:min(520px,70vw);opacity:.9}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-weight:500;font-size:15px}
+.dot{width:10px;height:10px;border-radius:50%;background:#999}
+.dot.on{background:#3f9b4a}.dot.off{background:#c0452f}
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-size:20px;margin-bottom:6px}
+.card p{color:var(--mute);font-size:15px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tab{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:15px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.item{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.item .t{flex:1}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:34px;height:34px;border-radius:50%;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:18px;cursor:pointer}
+.qty span{min-width:18px;text-align:center;font-weight:700}
+.ico{width:40px;height:40px;border-radius:50%;background:var(--gold);color:#2e1c11;display:grid;place-items:center;font-family:Fraunces,serif;font-weight:700;margin-bottom:12px}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:11px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right}
+.hours tr.today{font-weight:700;color:var(--brand)}
+.contact a{color:var(--brand);font-weight:700}
+form{display:grid;gap:12px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
+label{font-size:14px;font-weight:500;display:grid;gap:5px}
+footer{background:var(--ink);color:var(--bg);padding:36px 0 90px;font-size:14px}
+footer a{color:var(--gold)}
+#cartbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--ink);color:var(--bg);padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));display:none}
+#cartbar.show{display:block}
+#cartbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:0}
+#cartbar .btn{background:var(--gold);border-color:var(--gold);color:#2e1c11}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:25;background:#25d366;color:#fff;border-radius:999px;padding:13px 18px;font-weight:700;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+body.hascart .wa{bottom:calc(86px + env(safe-area-inset-bottom,0px))}
+#drawer{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.5);display:none;align-items:flex-end;justify-content:center}
+#drawer.open{display:flex}
+.panel{background:var(--bg);color:var(--ink);width:100%;max-width:520px;max-height:88%;overflow:auto;border-radius:18px 18px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px))}
+@media(min-width:700px){#drawer{align-items:center}.panel{border-radius:18px}}
+.ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+#close{border:0;background:none;color:var(--ink);font-size:22px;cursor:pointer;padding:6px}
+.line{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.line small{color:var(--mute)}
+.lt{min-width:80px;text-align:right}
+.sum{display:flex;justify-content:space-between;font-size:20px;padding:16px 0 4px}
+.note{font-size:13px;color:var(--mute);margin-bottom:14px}
+#send:disabled{opacity:.5;cursor:not-allowed}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#inicio">Galeria dos Pães</a>
+<nav><a href="#sobre">O Espaço</a><a href="#menu">Menu</a><a href="#servicos">Eventos</a><a href="#contactos">Contactos</a><a class="btn" href="#menu">Encomendar</a></nav>
+</div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="wrap">
+<h1>Pastelaria, brunch e pizzas a lenha.</h1>
+<p>Um espaço conhecido pela sua pastelaria, pequenos-almoços e brunch, pratos variados e pizzas cozidas em forno a lenha. Veja o menu e encomende pelo WhatsApp.</p>
+<div class="cta"><a class="btn" href="#menu">Ver menu</a><a class="btn ghost" href="tel:+244949838644">Ligar agora</a></div>
+<div class="status"><span class="dot" id="dot"></span><span id="statusTxt">A verificar horário…</span></div>
+</div>
+<svg class="loaf" viewBox="0 0 520 320" aria-hidden="true"><circle cx="300" cy="170" r="150" fill="#b9792f"/><circle cx="300" cy="170" r="132" fill="#e8b85c"/><circle cx="300" cy="170" r="118" fill="#c8402b" opacity=".85"/><g fill="#f4e9c8"><circle cx="250" cy="130" r="20"/><circle cx="330" cy="120" r="22"/><circle cx="360" cy="200" r="20"/><circle cx="270" cy="215" r="22"/><circle cx="310" cy="165" r="16"/></g><g fill="#4b5a34"><circle cx="290" cy="100" r="7"/><circle cx="380" cy="160" r="7"/><circle cx="230" cy="180" r="7"/><circle cx="330" cy="240" r="7"/></g></svg>
+</section>
+
+<section id="sobre"><div class="wrap">
+<h2>Um espaço para qualquer hora do dia</h2>
+<p class="lead">Da pastelaria feita no dia ao brunch demorado, dos pratos variados às pizzas de massa fina cozidas em forno a lenha. Venha almoçar, jantar, lanchar ou celebrar com quem gosta.</p>
+<div class="grid g4">
+<div class="card"><div class="ico">P</div><h3>Pastelaria</h3><p>Bolos, doces e salgados frescos, feitos com rigor e carinho.</p></div>
+<div class="card"><div class="ico">B</div><h3>Pequeno-almoço e brunch</h3><p>Opções doces e salgadas para começar bem o dia.</p></div>
+<div class="card"><div class="ico">R</div><h3>Pratos variados</h3><p>Carnes, peixes, massas e saladas para todos os gostos.</p></div>
+<div class="card"><div class="ico">L</div><h3>Pizzas a lenha</h3><p>Cozidas em forno a lenha, com sabor e crosta inconfundíveis.</p></div>
+</div></div></section>
+
+<section id="menu" style="background:var(--bg2)"><div class="wrap">
+<h2>Menu</h2>
+<p class="lead">Escolha as quantidades e finalize no WhatsApp. Confirmamos preços, disponibilidade e prazo consigo.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="grid g2" id="items"></div>
+<p class="lead" style="margin-top:22px;font-size:14px">Para bolos personalizados e festas, indique data, número de pessoas e tema na mensagem. Informe-nos de alergias ou restrições alimentares.</p>
+</div></section>
+
+<section id="servicos"><div class="wrap">
+<h2>Eventos e celebrações</h2>
+<p class="lead">Aniversários, baptizados, reuniões e festas privadas. Fazemos o bolo, os salgados e as pizzas para o seu evento, no espaço ou em sua casa.</p>
+<div class="grid g4">
+<div class="card"><h3>Bolos personalizados</h3><p>Aniversário, casamento e datas especiais, ao seu gosto.</p></div>
+<div class="card"><h3>Salgados e docinhos</h3><p>Por cento, para festas e reuniões.</p></div>
+<div class="card"><h3>Pizzas para grupos</h3><p>Fornadas a lenha para mesas grandes.</p></div>
+<div class="card"><h3>Festas infantis</h3><p>Bolo, doces e animação pensada para os pequenos.</p></div>
+</div>
+<a class="btn" style="margin-top:24px" href="https://wa.me/244949838644?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20or%C3%A7amento%20para%20um%20evento.">Pedir orçamento no WhatsApp</a>
+</div></section>
+
+<section id="contactos" style="background:var(--bg2)"><div class="wrap">
+<h2>Visite-nos</h2>
+<div class="grid g2" style="margin-top:20px">
+<div class="card contact">
+<h3>Contactos</h3>
+<p style="margin:10px 0"><strong>Morada:</strong> Rua do SIAC, Talatona, Luanda, Angola</p>
+<p style="margin:10px 0"><strong>Telefone:</strong> <a href="tel:+244949838644">+244 949 838 644</a></p>
+<p style="margin:10px 0 18px"><strong>WhatsApp (encomendas):</strong> <a href="https://wa.me/244949838644">+244 949 838 644</a></p>
+<a class="btn" href="https://wa.me/244949838644?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20encomenda.">Falar no WhatsApp</a>
+<a class="btn ghost" style="margin-top:10px" href="https://www.google.com/maps/search/?api=1&query=Galeria+dos+P%C3%A3es+Rua+do+SIAC+Talatona+Luanda" target="_blank" rel="noopener">Como chegar</a>
+</div>
+<div class="card">
+<h3>Horário de funcionamento</h3>
+<table class="hours" id="hours" style="margin-top:10px"></table>
+</div>
+</div>
+<div class="card" style="margin-top:18px">
+<h3>Envie-nos uma mensagem</h3>
+<form id="msg" style="margin-top:12px">
+<label>Nome<input id="n" required></label>
+<label>Mensagem<textarea id="m" rows="3" required></textarea></label>
+<button class="btn" type="submit">Enviar pelo WhatsApp</button>
+</form></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<strong style="font-family:Fraunces,serif;font-size:18px">Galeria dos Pães</strong>
+<p style="margin-top:8px">Talatona, Luanda — Angola · <a href="tel:+244949838644">+244 949 838 644</a></p>
+<p style="margin-top:6px">© 2026 Galeria dos Pães. Todos os direitos reservados.</p>
+</div></footer>
+
+<a class="wa" href="https://wa.me/244949838644" aria-label="Abrir WhatsApp">WhatsApp</a>
+<div id="cartbar"><div class="wrap"><span id="cartTxt"></span><button class="btn" id="viewcart">Ver carrinho</button></div></div>
+<div id="drawer" role="dialog" aria-modal="true" aria-label="Carrinho"><div class="panel">
+<div class="ph"><h3>O seu carrinho</h3><button id="close" aria-label="Fechar carrinho">✕</button></div>
+<div id="lines"></div>
+<div class="sum"><span>Total</span><strong id="tot">0 Kz</strong></div>
+<p class="note">Valores indicativos. Confirmamos o preço final e a disponibilidade no WhatsApp.</p>
+<button class="btn" id="send" style="width:100%">Finalizar no WhatsApp</button>
+</div></div>
+<script>
+const NUM="244949838644";
+const DATA={
+"Pastelaria":[["Croissant","Folhado e amanteigado",1500],["Pastel de nata","Receita tradicional",1200],["Bolo do dia","Pergunte pela fatia de hoje",2500],["Tarte de limão","Fresca e equilibrada",3000],["Empada de frango","Recheio cremoso",1500],["Bolo personalizado","Aniversário, casamento e festas",25000]],
+"Pequeno-almoço e brunch":[["Pequeno-almoço completo","Ovos, pão, fiambre, queijo e bebida",6500],["Torradas com ovos","Servidas com salada",4500],["Panquecas","Com fruta e mel",4500],["Sandes mista","Fiambre e queijo, na chapa",3000],["Iogurte com fruta","Granola e mel",3500],["Brunch para partilhar","Tábua de doces e salgados",15000]],
+"Pratos variados":[["Prato do dia","Consulte o prato de hoje",7500],["Bife grelhado","Com acompanhamento à escolha",9500],["Peixe grelhado","Fresco, com legumes",9500],["Massas","Várias opções e molhos",7000],["Hambúrguer da casa","Com batatas fritas",7500],["Salada completa","Frango ou atum",5500]],
+"Pizzas a lenha":[["Margherita","Tomate, mozzarella e manjericão",6500],["Fiambre e cogumelos","Clássica da casa",7500],["Pepperoni","Enchido picante",7500],["Quatro queijos","Cremosa e intensa",8000],["Frango e legumes","Com molho suave",7500],["Pizza da casa","Peça a sugestão do pizzaiolo",9000]],
+"Bebidas":[["Café expresso","Intenso e aromático",700],["Cappuccino","Com espuma cremosa",1500],["Sumo natural","Fruta da época",2000],["Chá","Quente ou gelado",1000],["Refrigerantes e água","Várias opções",800],["Cerveja e vinho","Consulte a carta",2500]]
+};
+const cart={};let cur=Object.keys(DATA)[0];
+const $=s=>document.querySelector(s);
+function renderTabs(){$("#tabs").innerHTML=Object.keys(DATA).map(k=>`<button class="tab" role="tab" aria-selected="${k===cur}" data-k="${k}">${k}</button>`).join("");
+$("#tabs").querySelectorAll(".tab").forEach(b=>b.onclick=()=>{cur=b.dataset.k;renderTabs();renderItems()})}
+const PRICE={};Object.values(DATA).flat().forEach(([n,d,p])=>PRICE[n]=p);
+const kz=v=>v.toLocaleString("pt-PT")+" Kz";
+const total=()=>Object.entries(cart).reduce((a,[n,q])=>a+PRICE[n]*q,0);
+const count=()=>Object.values(cart).reduce((a,b)=>a+b,0);
+function chg(n,d){const v=(cart[n]||0)+d;if(v>0)cart[n]=v;else delete cart[n];renderItems();upd()}
+function renderItems(){$("#items").innerHTML=DATA[cur].map(([n,d,p])=>`<div class="card item"><div class="t"><h3>${n}</h3><p>${d}</p><p><strong>${kz(p)}</strong></p></div><div class="qty"><button aria-label="Remover ${n}" data-n="${n}" data-d="-1">−</button><span>${cart[n]||0}</span><button aria-label="Adicionar ${n}" data-n="${n}" data-d="1">+</button></div></div>`).join("");
+$("#items").querySelectorAll("button").forEach(b=>b.onclick=()=>chg(b.dataset.n,+b.dataset.d))}
+function renderCart(){const e=Object.entries(cart);$("#lines").innerHTML=e.length?e.map(([n,q])=>`<div class="line"><div><strong>${n}</strong><br><small>${kz(PRICE[n])} × ${q}</small></div><div class="qty"><button aria-label="Remover ${n}" data-n="${n}" data-d="-1">−</button><span>${q}</span><button aria-label="Adicionar ${n}" data-n="${n}" data-d="1">+</button></div><strong class="lt">${kz(PRICE[n]*q)}</strong></div>`).join(""):"<p>O seu carrinho está vazio. Escolha produtos no menu.</p>";
+$("#lines").querySelectorAll("button").forEach(b=>b.onclick=()=>chg(b.dataset.n,+b.dataset.d));
+$("#tot").textContent=kz(total());$("#send").disabled=!e.length}
+function upd(){const t=count();$("#cartbar").classList.toggle("show",t>0);document.body.classList.toggle("hascart",t>0);$("#cartTxt").textContent=t+(t===1?" item":" itens")+" · "+kz(total());renderCart();if(!t)closeCart()}
+function openCart(){$("#drawer").classList.add("open");$("#close").focus()}
+function closeCart(){$("#drawer").classList.remove("open")}
+$("#viewcart").onclick=openCart;$("#close").onclick=closeCart;
+$("#drawer").onclick=e=>{if(e.target.id==="drawer")closeCart()};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeCart()});
+$("#send").onclick=()=>{const l=Object.entries(cart).map(([n,q])=>`• ${q}x ${n} — ${kz(PRICE[n]*q)}`).join("\n");
+open(`https://wa.me/${NUM}?text=`+encodeURIComponent("Olá! Gostaria de fazer a seguinte encomenda:\n"+l+"\n\nTotal: "+kz(total())+"\n\nNome:\nData e hora de levantamento/entrega:"),"_blank")};
+$("#msg").onsubmit=e=>{e.preventDefault();open(`https://wa.me/${NUM}?text=`+encodeURIComponent(`Olá! Sou ${$("#n").value}.\n${$("#m").value}`),"_blank")};
+const H=[["Domingo",12,22],["Segunda-feira",null],["Terça-feira",12,22],["Quarta-feira",12,22],["Quinta-feira",12,22],["Sexta-feira",12,23],["Sábado",12,23]];
+const parts=new Intl.DateTimeFormat("en-US",{timeZone:"Africa/Luanda",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+const wd=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(parts.find(p=>p.type==="weekday").value);
+const hr=(+parts.find(p=>p.type==="hour").value%24)+(+parts.find(p=>p.type==="minute").value)/60;
+const order=[5,6,0,1,2,3,4];
+$("#hours").innerHTML=order.map(i=>`<tr class="${i===wd?"today":""}"><td>${H[i][0]}</td><td>${H[i][1]?H[i][1]+":00 – "+H[i][2]+":00":"Encerrado"}</td></tr>`).join("");
+const t=H[wd],open_=t[1]&&hr>=t[1]&&hr<t[2];
+$("#dot").className="dot "+(open_?"on":"off");
+$("#statusTxt").textContent=open_?`Aberto agora · fecha às ${t[2]}:00`:(t[1]&&hr<t[1]?`Fechado · abre hoje às ${t[1]}:00`:"Fechado de momento");
+renderTabs();renderItems();
+</script>
+</body>
+</html>
+
